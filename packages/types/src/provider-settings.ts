@@ -182,8 +182,8 @@ const geminiSchema = apiModelIdProviderModelSchema.extend({
 })
 
 const geminiCliSchema = apiModelIdProviderModelSchema.extend({
-	geminiCliOAuthPath: z.string().optional(),
-	geminiCliProjectId: z.string().optional(),
+        geminiCliOAuthPath: z.string().optional(),
+        geminiCliProjectId: z.string().optional(),
 })
 
 const openAiNativeSchema = apiModelIdProviderModelSchema.extend({
