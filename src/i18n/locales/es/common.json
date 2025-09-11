@@ -85,43 +85,18 @@
 			"errorOutput": "Salida de error: {{output}}",
 			"processExitedWithError": "El proceso de Claude Code terminó con código {{exitCode}}. Salida de error: {{output}}",
 			"stoppedWithReason": "Claude Code se detuvo por la razón: {{reason}}",
-			"apiKeyModelPlanMismatch": "Las claves API y los planes de suscripción permiten diferentes modelos. Asegúrate de que el modelo seleccionado esté incluido en tu plan.",
-			"notFound": "Ejecutable de Claude Code '{{claudePath}}' no encontrado.\n\nPor favor instala Claude Code CLI:\n1. Visita {{installationUrl}} para descargar Claude Code\n2. Sigue las instrucciones de instalación para tu sistema operativo\n3. Asegúrate de que el comando 'claude' esté disponible en tu PATH\n4. Alternativamente, configura una ruta personalizada en la configuración de Roo bajo 'Ruta de Claude Code'\n\nError original: {{originalError}}"
+			"apiKeyModelPlanMismatch": "Las claves API y los planes de suscripción permiten diferentes modelos. Asegúrate de que el modelo seleccionado esté incluido en tu plan."
 		},
-		"message": {
-			"no_active_task_to_delete": "No hay tarea activa de la cual eliminar mensajes",
-			"invalid_timestamp_for_deletion": "Marca de tiempo del mensaje no válida para eliminación",
-			"cannot_delete_missing_timestamp": "No se puede eliminar el mensaje: falta marca de tiempo",
-			"cannot_delete_invalid_timestamp": "No se puede eliminar el mensaje: marca de tiempo no válida",
-			"message_not_found": "Mensaje con marca de tiempo {{messageTs}} no encontrado",
-			"error_deleting_message": "Error eliminando mensaje: {{error}}",
-			"error_editing_message": "Error editando mensaje: {{error}}"
-		},
-		"gemini": {
-			"generate_stream": "Error del stream de contexto de generación de Gemini: {{error}}",
-			"generate_complete_prompt": "Error de finalización de Gemini: {{error}}",
-			"sources": "Fuentes:"
-		},
-		"cerebras": {
-			"authenticationFailed": "Falló la autenticación de la API de Cerebras. Verifica que tu clave de API sea válida y no haya expirado.",
-			"accessForbidden": "Acceso prohibido a la API de Cerebras. Tu clave de API puede no tener acceso al modelo o función solicitada.",
-			"rateLimitExceeded": "Se excedió el límite de velocidad de la API de Cerebras. Espera antes de hacer otra solicitud.",
-			"serverError": "Error del servidor de la API de Cerebras ({{status}}). Inténtalo de nuevo más tarde.",
-			"genericError": "Error de la API de Cerebras ({{status}}): {{message}}",
-			"noResponseBody": "Error de la API de Cerebras: Sin cuerpo de respuesta",
-			"completionError": "Error de finalización de Cerebras: {{error}}"
-		},
-		"roo": {
-			"authenticationRequired": "El proveedor Roo requiere autenticación en la nube. Por favor, inicia sesión en Roo Code Cloud."
-		},
-		"api": {
-			"invalidKeyInvalidChars": "La clave API contiene caracteres inválidos."
-		},
-		"manual_url_empty": "Por favor, introduce una URL de callback válida",
-		"manual_url_no_query": "URL de callback inválida: faltan parámetros de consulta",
-		"manual_url_missing_params": "URL de callback inválida: faltan parámetros requeridos (code y state)",
-		"manual_url_auth_failed": "Autenticación manual por URL falló",
-		"manual_url_auth_error": "Error de autenticación"
+		"geminiCli": {
+			"oauthLoadFailed": "Error al cargar credenciales OAuth. Por favor autentícate primero: {{error}}",
+			"tokenRefreshFailed": "Error al actualizar token OAuth: {{error}}",
+			"onboardingTimeout": "La operación de incorporación expiró después de 60 segundos. Inténtalo de nuevo más tarde.",
+			"projectDiscoveryFailed": "No se pudo descubrir el ID del proyecto. Asegúrate de estar autenticado con 'gemini auth'.",
+			"rateLimitExceeded": "Límite de velocidad excedido. Se han alcanzado los límites del nivel gratuito.",
+			"badRequest": "Solicitud incorrecta: {{details}}",
+			"apiError": "Error de API de Gemini CLI: {{error}}",
+			"completionError": "Error de completado de Gemini CLI: {{error}}"
+		}
 	},
 	"warnings": {
 		"no_terminal_content": "No hay contenido de terminal seleccionado",
