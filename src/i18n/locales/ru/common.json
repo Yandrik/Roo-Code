@@ -121,7 +121,17 @@
 		"manual_url_no_query": "Недействительный URL обратного вызова: отсутствуют параметры запроса",
 		"manual_url_missing_params": "Недействительный URL обратного вызова: отсутствуют обязательные параметры (code и state)",
 		"manual_url_auth_failed": "Ручная аутентификация по URL не удалась",
-		"manual_url_auth_error": "Аутентификация не удалась"
+		"manual_url_auth_error": "Аутентификация не удалась",
+		"geminiCli": {
+			"oauthLoadFailed": "Не удалось загрузить учетные данные OAuth. Сначала выполните аутентификацию: {{error}}",
+			"tokenRefreshFailed": "Не удалось обновить токен OAuth: {{error}}",
+			"onboardingTimeout": "Операция подключения истекла через 60 секунд. Пожалуйста, попробуйте позже.",
+			"projectDiscoveryFailed": "Не удалось обнаружить идентификатор проекта. Убедитесь, что вы аутентифицированы с помощью 'gemini auth'.",
+			"rateLimitExceeded": "Превышен лимит скорости. Достигнуты лимиты бесплатного уровня.",
+			"badRequest": "Неверный запрос: {{details}}",
+			"apiError": "Ошибка API Gemini CLI: {{error}}",
+			"completionError": "Ошибка завершения Gemini CLI: {{error}}"
+		}
 	},
 	"warnings": {
 		"no_terminal_content": "Не выбрано содержимое терминала",

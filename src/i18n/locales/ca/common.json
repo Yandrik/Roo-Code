@@ -125,7 +125,17 @@
 		"manual_url_missing_params": "URL de callback no vàlida: falten paràmetres requerits (code i state)",
 		"manual_url_auth_failed": "Autenticació manual per URL ha fallat",
 		"manual_url_auth_error": "Autenticació fallida",
-		"mode_import_failed": "Ha fallat la importació del mode: {{error}}"
+		"mode_import_failed": "Ha fallat la importació del mode: {{error}}",
+		"geminiCli": {
+			"oauthLoadFailed": "No s'han pogut carregar les credencials OAuth. Si us plau, autentica't primer: {{error}}",
+			"tokenRefreshFailed": "No s'ha pogut actualitzar el token OAuth: {{error}}",
+			"onboardingTimeout": "L'operació d'onboarding ha esgotat el temps després de 60 segons. Si us plau, torna-ho a provar més tard.",
+			"projectDiscoveryFailed": "No s'ha pogut descobrir l'ID del projecte. Assegura't d'estar autenticat amb 'gemini auth'.",
+			"rateLimitExceeded": "S'ha superat el límit de velocitat. S'han assolit els límits del nivell gratuït.",
+			"badRequest": "Sol·licitud incorrecta: {{details}}",
+			"apiError": "Error de l'API Gemini CLI: {{error}}",
+			"completionError": "Error de compleció de Gemini CLI: {{error}}"
+		}
 	},
 	"warnings": {
 		"no_terminal_content": "No s'ha seleccionat contingut de terminal",

@@ -3,15 +3,16 @@
 import { usePathname, useSearchParams } from "next/navigation"
 import posthog from "posthog-js"
 import { PostHogProvider as OriginalPostHogProvider } from "posthog-js/react"
-import { useEffect, Suspense, useState } from "react"
-import { hasConsent, onConsentChange } from "@/lib/analytics/consent-manager"
+import { useEffect, Suspense } from "react"
 
+// Create a separate component for analytics tracking that uses useSearchParams
 function PageViewTracker() {
 	const pathname = usePathname()
 	const searchParams = useSearchParams()
 
 	// Track page views
 	useEffect(() => {
+		// Only track page views if PostHog is properly initialized
 		if (pathname && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
 			let url = window.location.origin + pathname
 			if (searchParams && searchParams.toString()) {
@@ -28,10 +29,8 @@ function PageViewTracker() {
 }
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
-	const [isInitialized, setIsInitialized] = useState(false)
-
 	useEffect(() => {
-		// Initialize PostHog only on the client side AND when consent is given
+		// Initialize PostHog only on the client side
 		if (typeof window !== "undefined") {
 			const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
 			const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
@@ -52,48 +51,27 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 				)
 			}
 
-			const initializePosthog = () => {
-				if (!isInitialized) {
-					posthog.init(posthogKey, {
-						api_host: posthogHost || "https://us.i.posthog.com",
-						capture_pageview: false,
-						loaded: (posthogInstance) => {
-							if (process.env.NODE_ENV === "development") {
-								posthogInstance.debug()
-							}
-						},
-						respect_dnt: true, // Respect Do Not Track
-					})
-					setIsInitialized(true)
-				}
-			}
-
-			// Check initial consent status
-			if (hasConsent()) {
-				initializePosthog()
-			}
-
-			// Listen for consent changes
-			const unsubscribe = onConsentChange((consented) => {
-				if (consented && !isInitialized) {
-					initializePosthog()
-				}
+			posthog.init(posthogKey, {
+				api_host: posthogHost || "https://us.i.posthog.com",
+				capture_pageview: false, // We'll handle this manually
+				loaded: (posthogInstance) => {
+					if (process.env.NODE_ENV === "development") {
+						// Log to console in development
+						posthogInstance.debug()
+					}
+				},
+				respect_dnt: true, // Respect Do Not Track
 			})
-
-			return () => {
-				unsubscribe()
-			}
 		}
-	}, [isInitialized])
 
-	// Only provide PostHog context if it's initialized
+		// No explicit cleanup needed for posthog-js v1.231.0
+	}, [])
+
 	return (
 		<OriginalPostHogProvider client={posthog}>
-			{isInitialized && (
-				<Suspense fallback={null}>
-					<PageViewTracker />
-				</Suspense>
-			)}
+			<Suspense fallback={null}>
+				<PageViewTracker />
+			</Suspense>
 			{children}
 		</OriginalPostHogProvider>
 	)

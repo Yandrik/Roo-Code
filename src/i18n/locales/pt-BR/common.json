@@ -125,7 +125,17 @@
 		"manual_url_no_query": "URL de callback inválida: parâmetros de consulta ausentes",
 		"manual_url_missing_params": "URL de callback inválida: parâmetros obrigatórios ausentes (code e state)",
 		"manual_url_auth_failed": "Autenticação manual por URL falhou",
-		"manual_url_auth_error": "Falha na autenticação"
+		"manual_url_auth_error": "Falha na autenticação",
+		"geminiCli": {
+			"oauthLoadFailed": "Falha ao carregar credenciais OAuth. Por favor, autentique-se primeiro: {{error}}",
+			"tokenRefreshFailed": "Falha ao atualizar token OAuth: {{error}}",
+			"onboardingTimeout": "A operação de integração expirou após 60 segundos. Por favor, tente novamente mais tarde.",
+			"projectDiscoveryFailed": "Não foi possível descobrir o ID do projeto. Certifique-se de estar autenticado com 'gemini auth'.",
+			"rateLimitExceeded": "Limite de taxa excedido. Os limites do nível gratuito foram atingidos.",
+			"badRequest": "Solicitação inválida: {{details}}",
+			"apiError": "Erro da API Gemini CLI: {{error}}",
+			"completionError": "Erro de conclusão do Gemini CLI: {{error}}"
+		}
 	},
 	"warnings": {
 		"no_terminal_content": "Nenhum conteúdo do terminal selecionado",
