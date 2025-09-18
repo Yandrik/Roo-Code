@@ -121,7 +121,17 @@
 		"manual_url_no_query": "Nieprawidłowy URL callback: brak parametrów zapytania",
 		"manual_url_missing_params": "Nieprawidłowy URL callback: brak wymaganych parametrów (code i state)",
 		"manual_url_auth_failed": "Ręczne uwierzytelnienie URL nie powiodło się",
-		"manual_url_auth_error": "Uwierzytelnienie nie powiodło się"
+		"manual_url_auth_error": "Uwierzytelnienie nie powiodło się",
+		"geminiCli": {
+			"oauthLoadFailed": "Nie udało się załadować danych uwierzytelniających OAuth. Najpierw się uwierzytelnij: {{error}}",
+			"tokenRefreshFailed": "Nie udało się odświeżyć tokenu OAuth: {{error}}",
+			"onboardingTimeout": "Operacja wdrażania przekroczyła limit czasu po 60 sekundach. Spróbuj ponownie później.",
+			"projectDiscoveryFailed": "Nie można odkryć ID projektu. Upewnij się, że jesteś uwierzytelniony za pomocą 'gemini auth'.",
+			"rateLimitExceeded": "Przekroczono limit szybkości. Osiągnięto limity darmowego poziomu.",
+			"badRequest": "Nieprawidłowe żądanie: {{details}}",
+			"apiError": "Błąd API Gemini CLI: {{error}}",
+			"completionError": "Błąd uzupełniania Gemini CLI: {{error}}"
+		}
 	},
 	"warnings": {
 		"no_terminal_content": "Nie wybrano zawartości terminala",

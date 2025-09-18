@@ -121,7 +121,17 @@
 		"manual_url_no_query": "URL callback tidak valid: parameter query hilang",
 		"manual_url_missing_params": "URL callback tidak valid: parameter yang diperlukan hilang (code dan state)",
 		"manual_url_auth_failed": "Autentikasi URL manual gagal",
-		"manual_url_auth_error": "Autentikasi gagal"
+		"manual_url_auth_error": "Autentikasi gagal",
+		"geminiCli": {
+			"oauthLoadFailed": "Gagal memuat kredensial OAuth. Silakan autentikasi terlebih dahulu: {{error}}",
+			"tokenRefreshFailed": "Gagal memperbarui token OAuth: {{error}}",
+			"onboardingTimeout": "Operasi onboarding habis waktu setelah 60 detik. Silakan coba lagi nanti.",
+			"projectDiscoveryFailed": "Tidak dapat menemukan ID proyek. Pastikan Anda terautentikasi dengan 'gemini auth'.",
+			"rateLimitExceeded": "Batas kecepatan terlampaui. Batas tingkat gratis telah tercapai.",
+			"badRequest": "Permintaan tidak valid: {{details}}",
+			"apiError": "Kesalahan API Gemini CLI: {{error}}",
+			"completionError": "Kesalahan penyelesaian Gemini CLI: {{error}}"
+		}
 	},
 	"warnings": {
 		"no_terminal_content": "Tidak ada konten terminal yang dipilih",
